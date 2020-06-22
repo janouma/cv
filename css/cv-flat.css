@@ -116,6 +116,9 @@
     .hide-on-print {
         display: none;
     }
+    .blank-on-print {
+        visibility: hidden;
+    }
   }
   
   @media screen {
