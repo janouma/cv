@@ -649,6 +649,7 @@ footer {
   background-size: var(--size) auto;
   background-repeat: no-repeat;
   -webkit-tap-highlight-color: transparent;
+  border: none;
 }
 
 .more:checked,
