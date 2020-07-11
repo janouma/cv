@@ -32,10 +32,6 @@
   --purple: 40,16,98;
 }
 
-html {
-  background-color: rgb(var(--eggshell));
-}
-
 html,
 body {
   margin: 0;
@@ -48,7 +44,11 @@ body {
 body {
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(var(--sky), 0.75);
+  background-color: black;
+
+  background-image:
+    linear-gradient(rgba(142, 199, 255, 0.75), rgba(142, 199, 255, 0.75)),linear-gradient(rgb(235, 235, 235), rgb(235, 235, 235));
+
   justify-content: center;
 }
 
