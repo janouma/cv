@@ -717,7 +717,7 @@ footer {
   font-weight: bold;
 }
 
-.content li {
+.content ul:not(.demos) li {
   padding-left: calc(0.25 * var(--content-spacing));
 }
 
