@@ -34,6 +34,7 @@
 
 html,
 body {
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -43,13 +44,20 @@ body {
 
 body {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   background-color: black;
 
   background-image:
     linear-gradient(rgba(142, 199, 255, 0.75), rgba(142, 199, 255, 0.75)),linear-gradient(rgb(235, 235, 235), rgb(235, 235, 235));
+}
 
-  justify-content: center;
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  padding-left: var(--content-spacing);
+  max-width: var(--content-vw);
+  margin: 0 auto;
 }
 
 *,
@@ -104,12 +112,6 @@ strong {
   color: rgba(var(--eggshell), 0.75);
 }
 
-.page,
-.body,
-.main {
-  display: contents;
-}
-
 .text-justify {
   text-align: justify;
 }
@@ -118,7 +120,8 @@ strong {
 .card,
 .linkedin,
 .demos li,
-.position {
+.position,
+footer {
   position: relative;
 }
 
@@ -129,7 +132,7 @@ strong {
   flex-direction: column;
   color: rgb(var(--eggshell));
   background: url(../images/space.svg) no-repeat top left/cover;
-  width: 100%;
+  flex: none;
 }
 
 .head ul {
@@ -190,7 +193,8 @@ strong {
 }
 
 .introduction h2,
-.main > h2 {
+main > h2,
+footer > h2 {
   text-transform: uppercase;
 }
 
@@ -269,29 +273,33 @@ ul.skills > li.css::before {
 h2.skills,
 .demos li h5,
 .demos li h6,
-hr {
+hr,
+.page-break {
   display: none;
 }
 
-.main > h2 {
+main > h2,
+footer > h2 {
   --scaled-wide-spacing: calc(var(--wide-content-spacing) / var(--user-agent-h2-font-scale));
 
-  margin-left: calc((2 * var(--content-spacing)) / var(--user-agent-h2-font-scale));
+  margin-top: var(--scaled-wide-spacing);
+  margin-bottom: calc(0.75 * var(--scaled-spacing));
+  margin-left: 0;
+  padding-left: calc((2 * var(--content-spacing)) / var(--user-agent-h2-font-scale));
   width: 100%;
 }
 
 .positions-title {
   --scaled-spacing: calc(var(--content-spacing) / var(--user-agent-h2-font-scale));
 
-  margin-top: var(--scaled-wide-spacing);
-  margin-bottom: calc(0.75 * var(--scaled-spacing));
   color: rgb(var(--purple));
+  align-self: flex-start;
 }
 
 .training-title {
-  margin-top: var(--scaled-wide-spacing);
-  margin-bottom: calc(-1 * (1em + var(--scaled-wide-spacing)));
-  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
   color: rgba(var(--eggshell), 0.5);
 }
 
@@ -521,10 +529,7 @@ hr {
   background-image: url(../images/winds_legacy.png);
 }
 
-.training-title,
-.position-wrapper,
-.archives,
-footer {
+main > :not(.positions-title) {
   order: 1;
 }
 
@@ -537,13 +542,12 @@ footer {
   --columns: 1;
   --h-outer-margin: var(--content-spacing);
   --hmargin: var(--content-spacing);
-  --half-hmargin: calc(var(--hmargin) / 2);
   --width: calc((var(--content-vw) - ((var(--columns) - 1) * var(--hmargin) + 2 * var(--h-outer-margin))) / var(--columns));
 
   display: flex;
   flex-direction: column;
   min-width: var(--width);
-  margin: 0 var(--half-hmargin) var(--position-margin-bottom) var(--half-hmargin);
+  margin: 0 var(--hmargin) var(--position-margin-bottom) 0;
   z-index: 0;
   border-radius: 0.2em;
   padding: 0 0 var(--content-spacing) 0;
@@ -623,7 +627,7 @@ footer {
 }
 
 .more:checked ~ * {
-  width: calc(100vw - 2 * var(--h-outer-margin));
+  width: calc(var(--content-vw) - 2 * var(--h-outer-margin));
 }
 
 .more:checked ~ .content {
@@ -767,7 +771,7 @@ footer {
 
   width: 100%;
   list-style: none;
-  margin: var(--margin-top) var(--content-spacing) var(--margin-bottom) var(--content-spacing);
+  margin: var(--margin-top) var(--content-spacing) var(--margin-bottom) 0;
   padding: 0 var(--content-spacing) var(--content-spacing) var(--content-spacing);
   border-radius: 0.2em;
   overflow: hidden;
@@ -775,6 +779,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: flex-end;
   font-size: 0.85em;
 }
 
@@ -801,7 +806,6 @@ footer {
 }
 
 footer {
-  width: 100%;
   background: rgb(174, 143, 182) no-repeat bottom right/cover;
 
   background-image:
@@ -812,6 +816,7 @@ footer {
   color: rgb(var(--eggshell));
   display: flex;
   flex-direction: column;
+  flex: none;
 }
 
 footer > .line + .line {
@@ -838,8 +843,9 @@ footer .line > :last-child p {
 }
 
 @media (min-width: 480px) {
-  .main > h2 {
-    margin-left: var(--scaled-wide-spacing);
+  main > h2,
+  footer > h2 {
+    padding-left: var(--scaled-wide-spacing);
   }
 
   .archives {
@@ -889,11 +895,6 @@ footer .line > :last-child p {
   .introduction {
     padding: var(--wide-content-spacing);
     padding-bottom: calc(var(--wide-content-spacing) + 3 * var(--content-spacing));
-  }
-
-  .position {
-    --h-outer-margin: var(--wide-content-spacing);
-    --hmargin: (2 * var(--content-spacing));
   }
 }
 

@@ -22,17 +22,15 @@
 body {
   background-color: white;
   font-family: 'Myriad Pro';
+  width: 21cm;
 }
 
 .position-wrapper,
 .position,
 .content,
-footer {
+footer,
+main {
   display: contents;
-}
-
-.a4 {
-  width: 21cm;
 }
 
 li::first-letter {
@@ -113,7 +111,7 @@ h4, .h4 {
 /*h6, .h6{font-size:108%; font-weight:normal; font-style: italic; color:#333;}*/
 
 @media print {
-  .page {
+  .page-break {
     page-break-after: always;
   }
   .block-spacing {
