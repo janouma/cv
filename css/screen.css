@@ -501,6 +501,7 @@ hr {
 }
 
 .demos .auspibor-grimoire {
+  display: none;
   background-image: url(../images/auspibor_grimoire.png);
 }
 
@@ -997,6 +998,12 @@ footer .line > :last-child p {
 
   .porfolio .demos {
     --max-demo-width: var(--thumbnail-mid-width);
+  }
+}
+
+@media (hover: hover) and (min-width: 1024px) and (min-height: 768px) {
+  .demos .auspibor-grimoire {
+    display: unset;
   }
 }
 
