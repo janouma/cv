@@ -564,53 +564,50 @@ main > :not(.positions-title) {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  padding-top: var(--content-spacing);
+  padding-bottom: var(--content-spacing);
+}
+
+.position header .unit,
+.position header .line {
+  display: contents;
 }
 
 .position header h3,
-.position header > div:last-child p,
-.position header h4 {
+.position header h4,
+.position header h3 + p {
   margin-top: 0;
+}
+
+.position header h3 + p {
+  order: 0;
+  margin-bottom: var(--content-spacing);
+  max-width: calc(0.75 * var(--width));
 }
 
 .position header h4 {
   margin-bottom: var(--content-spacing);
   text-transform: capitalize;
+  line-height: 1em;
+  font-size: 1.5em;
+  order: 1;
 }
 
-.position header > div:first-child {
-  display: flex;
-  flex-direction: column-reverse;
-  max-width: calc(0.8 * var(--width));
+.position header h3 {
+  font-size: 1em;
+  order: 2;
 }
 
-.position header > div:last-child,
-.position header > div:last-child > .line {
-  display: contents;
-}
-
-.position header > div:last-child > .line > div:first-child {
-  min-height: 3.375em;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.position header > div:last-child > .line > div:last-child {
+.position header .lastUnit p {
   --font-scale: 0.8;
   --padding: calc(var(--content-spacing) * (1 / var(--font-scale)));
   --hmargin: calc(-1 * var(--padding));
 
+  order: 3;
   font-size: calc(var(--font-scale) * 1em);
-  background-color: rgba(255, 255, 255, 0.25);
-  padding: var(--padding);
-  margin-left: var(--hmargin);
-  margin-right: var(--hmargin);
+  padding: 0 var(--padding);
+  margin: 0 var(--hmargin);
   flex: 1 1 auto;
-}
-
-.position p {
-  margin-top: var(--content-spacing);
-  margin-bottom: var(--content-spacing);
 }
 
 .position > h4 {
@@ -864,6 +861,10 @@ footer .line > :last-child p {
     min-height: var(--width);
   }
 
+  .more:not(:checked) ~ header h4 {
+    min-height: 2em;
+  }
+
   .archives li {
     flex-direction: row-reverse;
   }
@@ -966,12 +967,18 @@ footer .line > :last-child p {
 
   .more:checked ~ header {
     flex-direction: row;
-    align-items: flex-end;
     justify-content: space-between;
     flex: none;
   }
 
-  .more:checked ~ header > div:last-child > .line > div:last-child {
+  .more:checked ~ header h3 + p,
+  .more:checked ~ header h4,
+  .more:checked ~ header h3,
+  .more:checked ~ header .lastUnit p {
+    margin-bottom: 0;
+  }
+
+  .more:checked ~ header .lastUnit p {
     --padding: 0;
     
     font-size: inherit;
@@ -979,7 +986,6 @@ footer .line > :last-child p {
     background-color: unset;
     max-width: 50%;
     padding-right: var(--content-spacing);
-    margin-top: var(--content-spacing);
   }
 
   .archives {
