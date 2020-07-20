@@ -1,13 +1,13 @@
 @font-face {
-	font-family: 'Hasteristico';
-	src: url(../fonts/hasteristico-bold.woff) format('woff');
+	font-family: 'Avenir Next';
+	src: url(../fonts/avenir-next-demibold.woff) format('woff');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Hasteristico';
-	src: url(../fonts/hasteristico-light.woff) format('woff');
+	font-family: 'Avenir Next';
+	src: url(../fonts/avenir-next-regular.woff) format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -38,8 +38,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: 'Hasteristico';
-  letter-spacing: 0.15em;
+  font-family: 'Avenir Next';
 }
 
 body {
