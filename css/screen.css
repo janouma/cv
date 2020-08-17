@@ -483,6 +483,10 @@ footer > h2 {
   background-image: url(../images/avalona.png);
 }
 
+.demos .element-adapter {
+  background-image: url(../images/element_adapter.png);
+}
+
 .demos .coverflow {
   background-image: url(../images/flickrcoverflow.png);
 }
