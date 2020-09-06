@@ -532,6 +532,10 @@ footer > h2 {
   background-image: url(../images/winds_legacy.png);
 }
 
+.demos .acoa {
+  background-image: url(../images/acoa.jpg);
+}
+
 main > :not(.positions-title) {
   order: 1;
 }
