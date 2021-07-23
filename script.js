@@ -1,12 +1,19 @@
-function revealPosition ({ currentTarget }) {
-  const wrapper = currentTarget.closest('.position-wrapper')
-  const { document, setTimeout, scrollBy } = window
-  const multiColumnsThreshold = 540
-  const isMultiColumns = document.documentElement.clientWidth >= multiColumnsThreshold
-  const defaultMargin = 16
+if (matchMedia('(hover: none)').matches) {
+  document.querySelector('.demos')
+    .addEventListener('touchend', ({ target }) => {
+      if (target.matches('.demo')) {
+        target.classList.toggle('hover')
+      }
+    })
 
-  currentTarget.focus()
-  wrapper.style.order = currentTarget.checked && isMultiColumns ? 0 : 1
-
-  setTimeout(() => wrapper.scrollIntoView({ behavior: 'smooth' }), 50)
+  document.body
+    .addEventListener('touchstart', ({ target }) => {
+      if (!target.matches('.demo .link')) {
+        for (const demoElement of document.querySelectorAll('.demos .demo')) {
+          demoElement.classList.remove('hover')
+        }
+      }
+    })
 }
+
+document.getElementById('url').textContent = document.URL.replace(/\/(\w+\.html)?$/, '')
