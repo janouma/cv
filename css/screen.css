@@ -129,9 +129,9 @@ header {
       rgba(var(--doc-bg-color-rgb-components), 66%) var(--stars-end)
     ),
   
-    url(../images/stars.png),
-    url(../images/stars.png),
-    url(../images/header_background.svg),
+    url(/cv/images/stars.png),
+    url(/cv/images/stars.png),
+    url(/cv/images/header_background.svg),
 
     linear-gradient(
       to top,
@@ -159,31 +159,6 @@ header {
     repeat-x,
     no-repeat,
     no-repeat;
-}
-
-/* targeting Safari */
-@media not all and (min-resolution:.001dpcm) {
-  @supports (-webkit-appearance:none) and (display:flow-root) {
-    header {
-      background-image:
-        linear-gradient(
-          to top,
-          transparent var(--planet-glow-height),
-          var(--doc-bg-color) var(--planet-glow-height),
-          rgba(var(--doc-bg-color-rgb-components), 66%) var(--stars-end)
-        ),
-      
-        url(images/stars.png),
-        url(images/stars.png),
-        url(images/header_background.svg),
-
-        linear-gradient(
-          to top,
-          transparent 15.625em,
-          var(--doc-bg-color) var(--planet-glow-height)
-        );
-    }
-  }
 }
 
 header h2:not(:last-child) {
@@ -271,7 +246,7 @@ h2 {
   display: inline-block;
   width: var(--size);
   height: var(--size);
-  background: no-repeat center/contain url(../images/linkedin.svg);
+  background: no-repeat center/contain url(/cv/images/linkedin.svg);
 }
 
 @media (hover: none) {
@@ -389,7 +364,7 @@ h2 {
   --left: -31.29%;
 
   max-width: 10em;
-  background-image: url(../images/avalona.png);
+  background-image: url(/cv/images/avalona.png);
 }
 
 .demo.heimdall,
@@ -411,21 +386,21 @@ h2 {
   --top: 44.77%;
   --left: 5.07%;
 
-  background-image: url(../images/heimdall.png);
+  background-image: url(/cv/images/heimdall.png);
 }
 
 .demo.element-adapter {
   --top: 133.69%;
   --left: 40.34%;
 
-  background-image: url(../images/element_adapter.png);
+  background-image: url(/cv/images/element_adapter.png);
 }
 
 .demo.workflow-ide {
   --top: 30.65%;
   --left: 52.97%;
 
-  background-image: url(../images/workflow_ide.png);
+  background-image: url(/cv/images/workflow_ide.png);
   background-position: left 60% center;
 }
 
@@ -435,7 +410,7 @@ h2 {
   --left: 93.05%;
 
   max-width: 8.125em;
-  background-image: url(../images/flickrcoverflow.png);
+  background-image: url(/cv/images/flickrcoverflow.png);
   background-size: auto 150%;
   background-position: left 66% center;
 }
@@ -446,7 +421,7 @@ h2 {
   --left: 0.59%;
 
   max-width: 7.8125em;
-  background-image: url(../images/gare_o_loup.png);
+  background-image: url(/cv/images/gare_o_loup.png);
   background-position: right center;
 }
 
@@ -456,7 +431,7 @@ h2 {
   --left: 76.89%;
 
   max-width: 7.5em;
-  background-image: url(../images/mediterranean_war.png);
+  background-image: url(/cv/images/mediterranean_war.png);
   background-position: left 70% center;
 }
 
@@ -466,7 +441,7 @@ h2 {
   --left: 90.34%;
 
   max-width: 10.625em;
-  background-image: url(../images/acoa.jpg);
+  background-image: url(/cv/images/acoa.jpg);
 }
 
 .link {
@@ -640,28 +615,28 @@ h2 {
 }
 
 .video::before {
-  background-image: url(../images/play-icon.svg);
+  background-image: url(/cv/images/play-icon.svg);
 }
 
 .application::before {
-  background-image: url(../images/chrome.svg);
+  background-image: url(/cv/images/chrome.svg);
 }
 
 .github::before {
-  background-image: url(../images/github.svg);
+  background-image: url(/cv/images/github.svg);
 }
 
 @media not all and (min-resolution:.001dpcm) {
   @supports (-webkit-appearance:none) and (display:flow-root) {
     .application::before {
-      background-image: url(../images/safari.svg);
+      background-image: url(/cv/images/safari.svg);
     }
   }
 }
 
 @supports selector(:-moz-is-html) {
   .application::before {
-    background-image: url(../images/firefox.svg);
+    background-image: url(/cv/images/firefox.svg);
   }
 }
 
@@ -748,16 +723,16 @@ main .column {
 }
 
 .expertise .column:first-child {
-  background-image: url(../images/cogs.svg);
+  background-image: url(/cv/images/cogs.svg);
 }
 
 .expertise .column:nth-child(2) {
-  background-image: url(../images/blueprint.svg);
+  background-image: url(/cv/images/blueprint.svg);
 }
 
 .expertise .column:last-child {
   justify-content: flex-start;
-  background-image: url(../images/bulb.svg);
+  background-image: url(/cv/images/bulb.svg);
   background-size: auto 12.5em;
 }
 
@@ -769,11 +744,11 @@ main .column {
 }
 
 .typical-apps .column:first-child {
-  background-image: url(../images/laptop.svg);
+  background-image: url(/cv/images/laptop.svg);
 }
 
 .typical-apps .column:last-child {
-  background-image: url(../images/mobile.svg);
+  background-image: url(/cv/images/mobile.svg);
   background-size: auto 12.5em;
 }
 
@@ -786,7 +761,7 @@ main .column {
 
 .trainning .column {
   justify-content: flex-start;
-  background-image: url(../images/book.svg);
+  background-image: url(/cv/images/book.svg);
 }
 
 .trainning p {
