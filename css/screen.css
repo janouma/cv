@@ -161,6 +161,31 @@ header {
     no-repeat;
 }
 
+/* targeting Safari */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) and (display:flow-root) {
+    header {
+      background-image:
+        linear-gradient(
+          to top,
+          transparent var(--planet-glow-height),
+          var(--doc-bg-color) var(--planet-glow-height),
+          rgba(var(--doc-bg-color-rgb-components), 66%) var(--stars-end)
+        ),
+      
+        url(images/stars.png),
+        url(images/stars.png),
+        url(images/header_background.svg),
+
+        linear-gradient(
+          to top,
+          transparent 15.625em,
+          var(--doc-bg-color) var(--planet-glow-height)
+        );
+    }
+  }
+}
+
 header h2:not(:last-child) {
   margin-bottom: max(0.72em, 15px);
 }
