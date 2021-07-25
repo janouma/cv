@@ -16,4 +16,8 @@ if (matchMedia('(hover: none)').matches) {
     })
 }
 
-document.getElementById('url').textContent = document.URL.replace(/\/(\w+\.html)?$/, '')
+const urlElement = document.getElementById('url')
+const url = document.URL.replace(/\/(\w+\.html)?$/, '')
+
+urlElement.textContent = url
+urlElement.parentElement.setAttribute('href', url)
