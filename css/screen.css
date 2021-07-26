@@ -10,6 +10,7 @@
   --content-h-padding: max(0em, calc(3.6935vw - 1em));
   --transition-duration: 0.25s;
   --transition-timing-function: ease-in-out;
+  --border-radius: 0.35em;
 }
 
 .animated {
@@ -655,45 +656,21 @@ main section {
   margin-bottom: 6.5em;
 }
 
-main h2 {
+main h2,
+.positions h2 {
   position: absolute;
-  bottom: 99.925%;
+  bottom: 100%;
   left: 0;
   white-space: nowrap;
 }
 
 main .title-text {
-  --padding: calc(1em / 1.5);
+  --padding: calc(1em / var(--font-ratio));
   --border-radius: calc(var(--padding) / 2);
 
-  background-color: var(--background-color);
   display: inline-block;
   padding: 0.6em var(--padding) 0 var(--padding);
   margin-left: calc(-1 * var(--padding));
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
-  position: relative;
-}
-
-main .title-text::after {
-  --gradient-radius: 99.99%;
-
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 100%;
-
-  background-image: radial-gradient(
-    farthest-side at right top,
-    transparent var(--gradient-radius),
-    var(--background-color) var(--gradient-radius)
-  );
-  
-  width: var(--border-radius);
-  height: var(--border-radius);
-
-  /* DEBUG *
-  background-color: rgba(255, 0, 255, 12.5%);
-  /* END DEBUG */
 }
 
 main p {
@@ -714,15 +691,23 @@ main .column {
   justify-content: space-between;
 }
 
-.description {
-  border-radius: 0.5em;
-  border-top-left-radius: 0;
+.description h2 {
+  opacity: 50%;
+}
+
+.column p {
+  --expanse: 0.5em;
+
+  background-color: var(--background-color);
+  margin-right: calc(-1 * var(--expanse));
+  margin-left: calc(-1 * var(--expanse));
+  padding: var(--expanse);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
 }
 
 .expertise {
-  --background-color: rgba(255, 255, 255, 50%);
-
-  background-image: linear-gradient(var(--background-color), rgba(255, 255, 255, 10%));
+  --background-color: rgba(255, 255, 255, 33%);
   color: var(--secondary-text-color);
 }
 
@@ -742,7 +727,6 @@ main .column {
 
 .typical-apps {
   --background-color: rgba(29, 10, 62, 33%);
-  background-color: var(--background-color);
   width: 64.5%;
   margin-right: var(--content-h-padding);
 }
@@ -758,7 +742,6 @@ main .column {
 
 .trainning {
   --background-color: rgba(29, 10, 62, 12%);
-  background-color: var(--background-color);
   width: 29.25%;
   color: rgba(235, 235, 235, 75%);
 }
@@ -791,24 +774,26 @@ main .column {
   justify-content: center;
   flex-wrap: wrap;
   margin: var(--expanse) auto;
-  margin-top: -2.75em;
+  position: relative;
 }
 
 .positions > li {
   --color: rgba(255, 255, 255, 40%);
+  --position-padding: 0.625em;
 
   margin: var(--spacing);
   flex: 1 1 auto;
   max-width: var(--max-item-width);
-  padding: 0.625em;
+  padding: var(--position-padding);
   padding-bottom: 0.5em;
-  border-radius: 0.5em;
+  border-radius: var(--border-radius);
   background-color: var(--color);
   color: var(--color);
 }
 
 .positions h2 {
-  display: none;
+  margin-left: calc((var(--spacing) + var(--position-padding)) / var(--font-ratio));
+  margin-bottom: calc((1em - var(--spacing)) / var(--font-ratio));
 }
 
 .company {
@@ -916,13 +901,6 @@ main .column {
   .demos-inner-wrapper {
     max-width: 27.5em;
     margin: 0 13vw 0 auto;
-  }
-}
-
-@media (min-width: 641px) {
-  .positions {
-    margin-left: var(--expanse);
-    margin-right: var(--expanse);
   }
 }
 
