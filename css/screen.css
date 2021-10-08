@@ -2,6 +2,7 @@
   --doc-bg-color-rgb-components: 2,0,30;
   --doc-bg-color: rgb(var(--doc-bg-color-rgb-components));
   --main-bg-color: #CECDFF;
+  --main-snd-bg-color: #040031;
   --primary-text-color-rgb-components: 235,235,235;
   --primary-text-color: rgb(var(--primary-text-color-rgb-components));
   --secondary-text-color-rgb-components: 41,16,98;
@@ -36,6 +37,10 @@
   .hover-fx:hover {
     opacity: 0.75;
   }
+}
+
+p {
+  font-size: 1.20em;
 }
 
 html {
@@ -81,6 +86,30 @@ h2 {
   font-size: calc(var(--font-ratio) * 1em);
 }
 
+h4,
+h5 {
+  margin: 2em 0 0.5em 0;
+}
+
+h4 {
+  font-size: 1em;
+  opacity: 60%;
+}
+
+h5,
+h6 {
+  font-size: 0.8em;
+}
+
+h5 {
+  opacity: 50%;
+}
+
+h6 {
+  opacity: 40%;
+  margin: 1em 0 0.25em 0;
+}
+
 a * {
   display: none;
 }
@@ -98,10 +127,23 @@ a * {
   text-transform: uppercase;
 }
 
+.pre-line {
+  white-space: pre-line;
+}
+
+.topic {
+  margin-left: 1em;
+}
+
+header,
+main,
+footer {
+  padding: 0 var(--content-h-padding);
+}
+
 header,
 main {
   background-color: var(--main-bg-color);
-  padding: 0 var(--content-h-padding);
 }
 
 header,
@@ -133,7 +175,7 @@ header {
       var(--doc-bg-color) var(--planet-glow-height),
       rgba(var(--doc-bg-color-rgb-components), 66%) var(--stars-end)
     ),
-  
+
     url(/cv/images/stars.png),
     url(/cv/images/stars.png),
     url(/cv/images/header_background.svg),
@@ -143,14 +185,14 @@ header {
       transparent 15.625em,
       var(--doc-bg-color) var(--planet-glow-height)
     );
-  
+
   background-size:
     auto,
     auto,
     auto,
     max(100%, 1440px) auto,
     auto;
-  
+
   background-position:
     center bottom,
     center bottom var(--stars-end),
@@ -257,7 +299,7 @@ h2 {
 @media (hover: none) {
   .contact::after {
     --expanse: 0.5em;
-  
+
     content: '';
     position: absolute;
     top: 0;
@@ -542,15 +584,15 @@ h2 {
   .demo:hover .top.left::before {
     transform: translate(-50%, -50%);
   }
-  
+
   .demo:hover .top.right::before {
     transform: translate(50%, -50%);
   }
-  
+
   .demo:hover .half.top.right::before {
     transform: translate(50%, -50%) rotateZ(-45deg);
   }
-  
+
   .demo:hover .half.bottom.left::before {
     transform: translate(-50%, 50%) rotateZ(-45deg);
   }
@@ -560,15 +602,15 @@ h2 {
   .demo.hover .top.left::before {
     transform: translate(-50%, -50%);
   }
-  
+
   .demo.hover .top.right::before {
     transform: translate(50%, -50%);
   }
-  
+
   .demo.hover .half.top.right::before {
     transform: translate(50%, -50%) rotateZ(-45deg);
   }
-  
+
   .demo.hover .half.bottom.left::before {
     transform: translate(-50%, 50%) rotateZ(-45deg);
   }
@@ -647,7 +689,7 @@ h2 {
 
 main {
   flex: 1 1 auto;
-  background-image: linear-gradient(var(--main-bg-color), #040031);
+  background-image: linear-gradient(var(--main-bg-color), var(--main-snd-bg-color));
   text-align: center;
   padding-bottom: 4em;
 }
@@ -656,8 +698,13 @@ main section {
   margin-bottom: 6.5em;
 }
 
+main .positions {
+  margin-bottom: 5em;
+}
+
 main h2,
-.positions h2 {
+.positions h2,
+footer h2 {
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -817,11 +864,33 @@ main .column {
   color: rgba(var(--secondary-text-color-rgb-components), 55%);
 }
 
+footer {
+  background: var(--main-snd-bg-color) linear-gradient(var(--main-snd-bg-color), var(--doc-bg-color));
+}
+
+.positions-descriptions .column {
+  position: relative;
+  padding-top: 0.125em;
+  margin: 0 0.5em;
+}
+
+.position-description .company {
+    margin-top: 0;
+}
+
+.position-description .company .group {
+  color: var(--main-bg-color);
+  opacity: 33%;
+}
+
+.position-description {
+  background-color: rgba(255, 255, 255, 12.5%);
+  padding: 0.625em;
+  margin: 1em 0 2em 0;
+  border-radius: var(--border-radius);
+}
+
 @media (min-width: 1441px) {
-  .expertise .column:nth-child(2) p:first-child {
-    max-width: 82.5%;
-  }
-  
   .expertise .column:last-child p:first-child {
     margin-top: 30%;
     max-width: 55.5%;
@@ -839,7 +908,7 @@ main .column {
     display: flex;
     justify-content: space-between;
     flex: 1 1 auto;
-    
+
     /* DEBUG *
     background-color: rgba(255, 255, 0, 12.5%);
     /* END DEBUG */

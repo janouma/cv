@@ -56,12 +56,15 @@ p {
 }
 
 .topic {
-  display: block;
-  margin-left: 1em;
+  display: flex;
 }
 
 .topic:first-of-type:not(:first-child) {
   margin-top: 1em;
+}
+
+.topic:not(:first-of-type) {
+  margin-top: 0.5em;
 }
 
 .topic::before {
@@ -143,6 +146,21 @@ p {
 
 .month {
   text-transform: capitalize;
+}
+
+.position-description .company {
+    --tech-icon-size: 1.5em;
+
+    position: relative;
+    padding-right: calc(var(--tech-icon-size) + 0.5em);
+}
+
+.position-description .company svg {
+  max-height: var(--tech-icon-size);
+  max-width: var(--tech-icon-size);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /* DEBUG *

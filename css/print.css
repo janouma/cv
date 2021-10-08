@@ -229,7 +229,8 @@ h2 {
   content: 'github';
 }
 
-main .description {
+main .description,
+footer .description {
   padding-top: 3em;
 }
 
@@ -280,10 +281,15 @@ main .description {
   }
 }
 
-.description h2 {
+.description h2,
+.positions h2,
+footer h2 {
   position: absolute;
   bottom: 100%;
   left: 0;
+}
+
+.description h2 {
   transform: translate3d(0, 0, 0);
 }
 
@@ -292,16 +298,11 @@ main .description {
   grid-template-columns: repeat(3,1fr);
   gap: 2.25em;
   margin-top: 1.5em;
+  margin-bottom: 5em;
 }
 
 .positions li {
   position: relative;
-}
-
-.positions h2 {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
 }
 
 .column {
@@ -319,4 +320,12 @@ main .description {
 
 .month {
   font-weight: normal;
+}
+
+.position-description .company {
+  justify-content: space-between;
+}
+
+.position-description {
+  margin-bottom: 5em;
 }
