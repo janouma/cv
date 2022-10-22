@@ -45,10 +45,6 @@ u {
   color: rgb(115, 115, 115);
 }
 
-.aspect-ratio-enforcer {
-  display: none;
-}
-
 .translation {
   display: none;
 }
