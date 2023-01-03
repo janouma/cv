@@ -41,7 +41,6 @@ footer {
 
 header {
   padding: 1.967em var(--content-h-padding) 5.175em var(--content-h-padding);
-  /* padding-bottom: 5.175em; */
   column-gap: var(--columns-gap);
 }
 
@@ -53,7 +52,6 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-  /* width: max(1.09em, 26.25px); */
   width: 1.031em;
   aspect-ratio: 1;
   background: no-repeat center/contain url(/cv/images/linkedin.svg);
@@ -69,7 +67,7 @@ header {
 
 .long-introduction {
   min-width: 47.5%;
-  /* min-width: 37.5%; */
+  
 }
 
 .long-introduction h2 {
@@ -90,9 +88,7 @@ main > *:nth-child(n + 2) {
 }
 
 @media (max-width: 570px) {
-  /* .demos > h2 {
-    max-width: 13.792em;
-  } */
+  
 
   .demos {
     max-width: var(--column-capped-width);
@@ -103,8 +99,6 @@ main > *:nth-child(n + 2) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* z-index: 1; */
-  /* aspect-ratio: 495/223.8; */
   margin-top: -0.5em;
   flex-wrap: wrap;
 }
@@ -143,24 +137,16 @@ main > *:nth-child(n + 2) {
   --capped-size: max(var(--scaled-size, var(--size)), 74px);
   
   position: relative;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: flex-end; */
-  /* align-items: center; */
-  /* flex: 1; */
   flex: none;
   width: var(--capped-size);
-  /* height: var(--capped-size); */
   aspect-ratio: 1;
   box-sizing: border-box;
   border-radius: 50%;
   border: solid 1px rgba(255, 255, 255, 62.5%);
   background: white no-repeat center/auto calc(100% + 2px);
-  /* transform: translate(-50%, -50%); */
   box-shadow: 0 0 0 1px rgba(var(--doc-bg-color-rgb-components), 12.5%);
   pointer-events: none;
   cursor: pointer;
-  /* z-index: 0; */
   isolation: isolate;
 }
 
@@ -195,7 +181,7 @@ main > *:nth-child(n + 2) {
   white-space: nowrap;
   line-height: 0.9;
   font-size: 0.667em;
-  /* align-self: flex-end; */
+  
 }
 
 :not(.mediterranean-war) > .demo-title {
@@ -540,7 +526,6 @@ footer {
   column-gap: var(--columns-gap);
   display: flex;
   margin: 0 auto;
-  /* opacity: 75%; */
 }
 
 footer > :where(:not(last-child)) {
