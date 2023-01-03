@@ -1,0 +1,171 @@
+:root {
+  --vw-relative-font-size: 0.83vw;
+  --min-font-size: 12px;
+}
+
+@page {
+  margin: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: currentcolor;
+}
+
+.translation {
+  display: none
+}
+
+header {
+  padding-bottom: 3.5em;
+  flex-direction: row-reverse;
+  column-gap: 1.5em;
+}
+
+.avatar {
+  border: solid 1px black;
+}
+
+.avatar.screen {
+  display: none;
+}
+
+.short-introduction h1 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25em;
+}
+
+.contact,
+.web {
+  display: block;
+  font-size: 0.5em;
+}
+
+/* .long-introduction {
+  margin-top: -2em;
+} */
+
+.long-introduction h2 {
+  opacity: 60%;
+  margin-bottom: 0.25em;
+}
+
+main > * {
+  margin-bottom: 3.5em;
+  page-break-inside: avoid;
+}
+
+.demos {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+}
+
+.demos,
+.demos-inner-wrapper {
+  row-gap: 1.483em;
+}
+
+.demos-inner-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--columns-gap);
+  box-sizing: border-box;
+}
+
+.demos-inner-wrapper > .half-split {
+  display: contents;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 max(40%, 21.075em);
+}
+
+.demo a {
+  font-size: 0.9em;
+}
+
+.demo > :not(.demo-title) {
+  order: 1;
+}
+
+.demo-title {
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1;
+  padding-bottom: 0.2em;
+}
+
+.link {
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+  column-gap: 1em;
+}
+
+.link::before {
+  display: block;
+  font-weight: bold;
+  line-height: 1;
+  color: rgb(115, 115, 115);
+  margin-top: 0.5em;
+}
+
+.video::before {
+  content: 'video:';
+}
+
+.application::before {
+  content: 'demo:';
+}
+
+.github::before {
+  content: 'github:';
+}
+
+.positions-wrapper,
+#sncf-position-description {
+  page-break-after: always;
+}
+
+footer {
+  margin-top: 0.5em;
+}
+
+#sncf-position-description + .position-description {
+  margin-top: 1em;
+}
+
+.positions {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2.25em;
+}
+
+.positions li {
+  position: relative;
+}
+
+.column {
+  position: relative;
+}
+
+.group,
+.timelapse {
+  color: rgb(115, 115, 115);
+}
+
+.timelapse {
+  font-size: 0.7em;
+}
+
+.month {
+  font-weight: normal;
+}
+
+footer > :where(:not(last-child)) {
+  margin-bottom: 3.5em;
+}
