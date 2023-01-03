@@ -44,8 +44,16 @@ header {
   column-gap: var(--columns-gap);
 }
 
+.business-card {
+  min-width: min(var(--column-capped-width), 100%);
+}
+
 .avatar.print {
   display: none;
+}
+
+.fullname {
+  font-size: calc(2 * max(var(--vw-relative-font-size), 12px));
 }
 
 .contact {
@@ -61,13 +69,20 @@ header {
   display: none;
 }
 
+.short-introduction {
+  min-width: 27.594dvw;
+}
+
+.short-introduction h2 {
+  font-size: calc(1.5 * max(var(--vw-relative-font-size), 13px));
+}
+
 .technologies svg {
   color: #BBB74C;
 }
 
 .long-introduction {
   min-width: 47.5%;
-  
 }
 
 .long-introduction h2 {

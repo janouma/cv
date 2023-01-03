@@ -1,10 +1,20 @@
 :root {
-  --vw-relative-font-size: 0.83vw;
   --min-font-size: 12px;
 }
 
 @page {
   margin: 1em;
+}
+
+html {
+  max-width: 210mm;
+  container: root / inline-size;
+}
+
+@container root (width > 0) {
+  body {
+    --vw-relative-font-size: 0.83cqw;
+  }
 }
 
 a {
@@ -28,6 +38,14 @@ header {
 
 .avatar.screen {
   display: none;
+}
+
+.business-card {
+  min-width: 417px;
+}
+
+.short-introduction {
+  min-width: 27.594cqw;
 }
 
 .short-introduction h1 {
