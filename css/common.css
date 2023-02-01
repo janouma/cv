@@ -105,17 +105,17 @@ p {
   display: flex;
 }
 
+.topic::before {
+  content: '•';
+  margin-right: 0.5em;
+}
+
 .topic:first-of-type:not(:first-child) {
   margin-top: 1em;
 }
 
 .topic:not(:first-of-type) {
   margin-top: 0.5em;
-}
-
-.topic::before {
-  content: '•';
-  margin-right: 0.5em;
 }
 
 .positions {
@@ -381,7 +381,6 @@ header {
   flex: none;
   width: var(--size);
   height: var(--size);
-  border-radius: 50%;
   object-fit: cover;
   object-position: center -0.75em;
   box-sizing: border-box;
@@ -424,12 +423,6 @@ main {
   margin-left: auto;
   margin-right: auto;
   isolation: isolate;
-}
-
-.expertise,
-.typical-apps,
-.trainning {
-  row-gap: 1.483em;
 }
 
 :where(
@@ -483,10 +476,6 @@ main {
 
 .topic {
   margin-left: 1em;
-}
-
-.trainning {
-  opacity: 50%;
 }
 
 .trainning::before {

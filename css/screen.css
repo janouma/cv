@@ -48,6 +48,10 @@ header {
   min-width: min(var(--column-capped-width), 100%);
 }
 
+.avatar {
+  border-radius: 50%;
+}
+
 .avatar.print {
   display: none;
 }
@@ -489,6 +493,16 @@ main > *:nth-child(n + 2) {
   .application::before {
     background-image: url(/cv/images/firefox.svg);
   }
+}
+
+.expertise,
+.typical-apps,
+.trainning {
+  row-gap: 1.483em;
+}
+
+.trainning {
+  opacity: 50%;
 }
 
 .positions-wrapper {

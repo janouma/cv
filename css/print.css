@@ -22,26 +22,50 @@ a {
   color: currentcolor;
 }
 
-.translation {
-  display: none
+.translation,
+:is(
+  .design-assist,
+  .ui-ux
+):nth-child(1n) {
+  display: none;
 }
 
 header {
-  padding-bottom: 3.5em;
-  flex-direction: row-reverse;
+  margin-bottom: -3.5em;
+  position: relative;
   column-gap: 1.5em;
+  min-height: 250px;
+}
+
+:where(
+  .demos,
+  .expertise,
+  .typical-apps,
+  .trainning,
+  .positions-wrapper,
+  footer
+) > h2 {
+  line-height: 1.25;
+  border: 0.075em solid rgba(0,0,0,25%);
+  padding: 0.125em 0 0 0.25em;
+  box-sizing: border-box;
+  border-radius: 0.2em;
 }
 
 .avatar {
   border: solid 1px black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0.25em;
 }
 
 .avatar.screen {
   display: none;
 }
 
-.business-card {
-  min-width: 417px;
+.fullname {
+  margin-bottom: 0.5em;
 }
 
 .short-introduction {
@@ -51,22 +75,31 @@ header {
 .short-introduction h1 {
   display: flex;
   flex-direction: column;
-  row-gap: 0.25em;
+  row-gap: 0.1em;
 }
 
 .contact,
 .web {
   display: block;
-  font-size: 0.5em;
+  font-size: 0.375em;
 }
 
 .long-introduction h2 {
   opacity: 60%;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.6em;
+}
+
+.long-introduction p {
+  line-height: 1.475;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 main > * {
-  margin-bottom: 3.5em;
+  margin-bottom: 5em;
   page-break-inside: avoid;
 }
 
@@ -74,6 +107,7 @@ main > * {
   display: flex;
   flex-direction: column;
   padding-bottom: 2em;
+  order: 1;
 }
 
 .demos,
@@ -140,17 +174,83 @@ main > * {
   content: 'github:';
 }
 
-.positions-wrapper,
-#sncf-position-description {
-  page-break-after: always;
+.expertise,
+.typical-apps,
+.trainning {
+  row-gap: 0.5em;
+}
+
+:where(
+  .expertise,
+  .typical-apps,
+  .trainning,
+  .demos
+) > h2 {
+  margin-bottom: 1em;
+}
+
+:where(.expertise, .typical-apps) > p::before {
+  content: '•';
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.expertise > p {
+  display: flex;
+}
+
+:where(.expertise, .typical-apps) > p :not(strong) {
+  display: none;
+}
+
+:where(.expertise, .typical-apps) strong {
+  font-weight: normal;
+}
+
+.typical-apps strong {
+  display: inline-block;
+}
+
+.typical-apps strong::first-letter {
+  text-transform: uppercase;
+}
+
+.typical-apps > p:has(.topic) {
+  margin: 0.5em 0;
+}
+
+.typical-apps .topic {
+  line-height: 1;
+}
+
+.typical-apps .topic::before {
+  content: '○';
+}
+
+.typical-apps .topic:first-of-type:not(:first-child) {
+  margin-top: 0.5em;
+}
+
+.typical-apps .topic:not(:first-of-type) {
+  margin-top: 0.25em;
+}
+
+.trainning {
+  order: 2;
+}
+
+.positions-wrapper {
+  page-break-inside: avoid;
+  order: 1;
 }
 
 footer {
   margin-top: 0.5em;
 }
 
-#sncf-position-description + .position-description {
-  margin-top: 1em;
+.position-description > h3 {
+  line-height: 1.5;
+  border-bottom: 0.075em solid rgba(0,0,0,20%);
 }
 
 .positions {
