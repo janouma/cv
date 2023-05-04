@@ -1,3 +1,5 @@
+@import "./common.css";
+
 :root {
   --doc-bg-color-rgb-components: 2,0,30;
   --doc-bg-color: rgb(var(--doc-bg-color-rgb-components));
