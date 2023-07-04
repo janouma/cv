@@ -20,6 +20,14 @@ a * {
   display: none;
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  line-height: 1.375;
+}
+
 .translation {
   position: absolute;
   top: 0;
@@ -50,11 +58,8 @@ header {
   min-width: min(var(--column-capped-width), 100%);
 }
 
-.avatar {
-  border-radius: 50%;
-}
-
-.avatar.print {
+.avatar.print,
+.skills-preview {
   display: none;
 }
 
@@ -75,12 +80,22 @@ header {
   display: none;
 }
 
+.business-card h2 {
+  max-width: 13.25em;
+}
+
 .short-introduction {
   min-width: 27.594dvw;
 }
 
 .short-introduction h2 {
   font-size: calc(1.5 * max(var(--vw-relative-font-size), 13px));
+}
+
+.technologies {
+  --icon-size: 3em;
+  
+  font-size: 0.638em;
 }
 
 .technologies svg {
@@ -501,6 +516,7 @@ main > *:nth-child(n + 2) {
 .typical-apps,
 .trainning {
   row-gap: 1.483em;
+  isolation: isolate;
 }
 
 .trainning {

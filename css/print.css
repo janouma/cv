@@ -24,6 +24,14 @@ a {
   color: currentcolor;
 }
 
+h2 {
+  font-size: 1.25em;
+}
+
+p {
+  line-height: 1;
+}
+
 .translation,
 :is(
   .design-assist,
@@ -33,14 +41,14 @@ a {
 }
 
 header {
-  margin-bottom: -3.5em;
   position: relative;
-  column-gap: 1.5em;
-  min-height: 250px;
+  column-gap: 5em;
+  margin-bottom: 3.75em;
 }
 
 :where(
   .demos,
+  .skills-preview,
   .expertise,
   .typical-apps,
   .trainning,
@@ -48,10 +56,12 @@ header {
   footer
 ) > h2 {
   line-height: 1.25;
-  border: 0.075em solid rgba(0,0,0,25%);
-  padding: 0.125em 0 0 0.25em;
+  border-bottom: 0.125em solid black;
   box-sizing: border-box;
-  border-radius: 0.2em;
+}
+
+.business-card {
+  justify-content: space-between;
 }
 
 .avatar {
@@ -59,7 +69,6 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-  border-radius: 0.25em;
 }
 
 .avatar.screen {
@@ -78,6 +87,20 @@ header {
   display: flex;
   flex-direction: column;
   row-gap: 0.1em;
+  
+  & :where(.web, .contact) {
+    position: relative;
+    top: 2.75em;
+  }
+}
+
+.short-introduction h2 {
+  position: relative;
+  bottom: 2.25em;
+}
+
+.technologies {
+  --icon-size: 2.375em;
 }
 
 .contact,
@@ -101,20 +124,18 @@ main {
 }
 
 main > * {
-  margin-bottom: 5em;
+  margin-bottom: 2.5em;
   page-break-inside: avoid;
 }
 
 .demos {
   display: flex;
   flex-direction: column;
-  padding-bottom: 2em;
   order: 1;
 }
 
-.demos,
 .demos-inner-wrapper {
-  row-gap: 1.483em;
+  row-gap: 1em;
 }
 
 .demos-inner-wrapper {
@@ -138,6 +159,11 @@ main > * {
   font-size: 0.9em;
 }
 
+.demo a,
+.link::before {
+  line-height: 1.25;
+}
+
 .demo > :not(.demo-title) {
   order: 1;
 }
@@ -145,8 +171,7 @@ main > * {
 .demo-title {
   font-weight: bold;
   text-transform: capitalize;
-  line-height: 1;
-  padding-bottom: 0.2em;
+  line-height: 1.5;
 }
 
 .link {
@@ -159,9 +184,7 @@ main > * {
 .link::before {
   display: block;
   font-weight: bold;
-  line-height: 1;
   color: rgb(115, 115, 115);
-  margin-top: 0.5em;
 }
 
 .video::before {
@@ -176,6 +199,21 @@ main > * {
   content: 'github:';
 }
 
+.skills-preview > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  font-weight: bold;
+  text-transform: capitalize;
+
+  & li {
+    border: solid 1px;
+    padding-inline: 0.375em;
+    padding-block: 0.125em;
+    border-radius: 0.125em;
+  }
+}
+
 .expertise,
 .typical-apps,
 .trainning {
@@ -183,12 +221,13 @@ main > * {
 }
 
 :where(
+  .skills-preview,
   .expertise,
   .typical-apps,
   .trainning,
   .demos
 ) > h2 {
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
 }
 
 :where(.expertise, .typical-apps) > p::before {
@@ -258,7 +297,7 @@ footer {
 .positions {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 2.25em;
+  gap: 1em;
 }
 
 .positions li {
