@@ -140,10 +140,7 @@ p {
 }
 
 .position-description .company {
-    --tech-icon-size: 1.5em;
-
     position: relative;
-    padding-right: calc(var(--tech-icon-size) + 0.5em);
 }
 
 .position-description .company svg {

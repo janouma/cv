@@ -28,6 +28,16 @@ p {
   line-height: 1.375;
 }
 
+.screen-order-2 {
+  order: 2;
+}
+
+footer {
+  & h3 > .technology {
+    display: none;
+  }
+}
+
 .translation {
   position: absolute;
   top: 0;
@@ -566,6 +576,11 @@ main > *:nth-child(n + 2) {
 
 .month {
   color: rgba(var(--secondary-text-color-rgb-components), 55%);
+}
+
+.position-description .company {
+    --tech-icon-size: 1.5em;
+    padding-right: calc(var(--tech-icon-size) + 0.5em);
 }
 
 footer {

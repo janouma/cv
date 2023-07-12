@@ -32,6 +32,20 @@ p {
   line-height: 1;
 }
 
+footer {
+  & h3 {
+    & > svg {
+      display: none;
+    }
+
+    & > .technology {
+      margin-left: auto;
+      align-self: center;
+      text-transform: capitalize;
+    }
+  }
+}
+
 .translation,
 :is(
   .design-assist,
