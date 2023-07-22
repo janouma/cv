@@ -32,6 +32,11 @@ p {
   line-height: 1;
 }
 
+main,
+footer {
+  font-size: 10px;
+}
+
 footer {
   & h3 {
     & > svg {
@@ -139,7 +144,7 @@ main {
 
 main > * {
   margin-bottom: 2.5em;
-  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
 .demos {
@@ -262,6 +267,10 @@ main > * {
   font-weight: normal;
 }
 
+.typical-apps {
+  display: none;
+}
+
 .typical-apps strong {
   display: inline-block;
 }
@@ -292,10 +301,11 @@ main > * {
 
 .trainning {
   order: 2;
+  margin-bottom: 8em;
 }
 
 .positions-wrapper {
-  page-break-inside: avoid;
+  break-inside: avoid;
   order: 1;
 }
 
