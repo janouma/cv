@@ -538,25 +538,80 @@ main > *:nth-child(n + 2) {
 
 .positions {
   --max-item-width: 33.04025em;
+  --gap: 1em;
 
+  display: revert;
+  column-count: 1;
+  column-gap: var(--gap);
   font-size: max(0.83vw, 12px);
-  gap: 1em;
-  justify-content: center;
-  flex-wrap: wrap;
   position: relative;
+  margin-top: calc(-1 * var(--gap));
+}
+
+@media (width >= 768px) {
+  .positions {
+    column-count: 2;
+  }
+}
+
+@media (width >= 1080px) {
+  .positions {
+    column-count: 3;
+  }
+}
+
+@media (width >= 1480px) {
+  .positions {
+    column-count: 4;
+  }
 }
 
 .positions > li {
   --color: rgba(255, 255, 255, 40%);
   --position-padding: 0.625em;
   
-  flex: 1 1 auto;
-  max-width: var(--max-item-width);
+  width: 100%;
+  box-sizing: border-box;
   padding: var(--position-padding);
   padding-bottom: 0.5em;
   border-radius: var(--border-radius);
   background-color: var(--color);
   color: var(--color);
+  margin-top: var(--gap);
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  font-size: 1.1875em;
+  
+  &:has(section) {
+    padding: calc(var(--position-padding) * 1.25);
+    padding-bottom: 0.625em;
+  }
+
+  & > section {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
+    & > .technology {
+      display: none;
+      
+      & + svg {
+        height: 1.5em;
+        aspect-ratio: 1;
+        align-self: end;
+      }
+    }
+    
+    & :where(h4, h5) {
+      color: var(--primary-text-color);
+    }
+  }
+  
+  & :where(p, .topic) {
+    color: var(--secondary-text-color);
+  }
 }
 
 .company {
@@ -574,11 +629,6 @@ main > *:nth-child(n + 2) {
 
 .month {
   color: rgba(var(--secondary-text-color-rgb-components), 55%);
-}
-
-.position-description .company {
-    --tech-icon-size: 1.5em;
-    padding-right: calc(var(--tech-icon-size) + 0.5em);
 }
 
 footer {

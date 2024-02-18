@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Avenir Next';
-  src: url(../fonts/avenir-next-demibold.woff) format('woff');
+  font-family: "Avenir Next";
+  src: url(../fonts/avenir-next-demibold.woff) format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Avenir Next';
-  src: url(../fonts/avenir-next-regular.woff) format('woff');
+  font-family: "Avenir Next";
+  src: url(../fonts/avenir-next-regular.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 :root {
   --columns-gap: 4.125em;
   --column-capped-width: 20.688em;
-  
+
   --content-h-padding: max(
     0.666em,
     env(safe-area-inset-left),
@@ -27,7 +27,7 @@
 html,
 body,
 svg text {
-  font-family: 'Avenir Next';
+  font-family: "Avenir Next";
 }
 
 h1,
@@ -102,7 +102,7 @@ p {
 }
 
 .topic::before {
-  content: '•';
+  content: "•";
   margin-right: 0.5em;
 }
 
@@ -115,10 +115,12 @@ p {
 }
 
 .positions {
-  font-weight: bold;
-  white-space: nowrap;
   text-align: left;
   line-height: 1;
+
+  & > li > *:not(section) {
+    font-weight: bold;
+  }
 }
 
 .timelapse {
@@ -129,6 +131,12 @@ p {
 .company {
   margin-bottom: 0.33em;
   display: flex;
+
+  & > div > span {
+    text-transform: initial;
+    font-style: italic;
+    font-weight: normal;
+  }
 }
 
 .group {
@@ -140,7 +148,7 @@ p {
 }
 
 .position-description .company {
-    position: relative;
+  position: relative;
 }
 
 .position-description .company svg {
@@ -155,19 +163,8 @@ p {
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 
-  transition-property:
-    color,
-    background-color,
-    opacity,
-    visibility,
-    height,
-    width,
-    transform,
-    transform-origin,
-    filter,
-    left,
-    top,
-    right;
+  transition-property: color, background-color, opacity, visibility, height,
+    width, transform, transform-origin, filter, left, top, right;
 }
 
 @media (hover: hover) {
@@ -197,7 +194,7 @@ body {
 
 body {
   --current-color-rgb-components: var(--primary-text-color-rgb-components);
-  
+
   font-size: max(var(--vw-relative-font-size), var(--min-font-size));
   color: rgb(var(--current-color-rgb-components));
   line-height: 1.25;
@@ -263,18 +260,14 @@ header {
   row-gap: 2em;
   box-sizing: border-box;
 
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       to top,
       transparent var(--planet-glow-height),
       var(--doc-bg-color) var(--planet-glow-height),
       rgba(var(--doc-bg-color-rgb-components), 66%) var(--stars-end)
     ),
-
-    url(/cv/images/stars.png),
-    url(/cv/images/stars.png),
+    url(/cv/images/stars.png), url(/cv/images/stars.png),
     url(/cv/images/header_background.svg),
-
     linear-gradient(
       to top,
       transparent 15.625em,
@@ -295,12 +288,7 @@ header {
     center bottom,
     center bottom;
 
-  background-repeat:
-    no-repeat,
-    repeat-x,
-    repeat-x,
-    no-repeat,
-    no-repeat;
+  background-repeat: no-repeat, repeat-x, repeat-x, no-repeat, no-repeat;
 }
 
 @media (max-width: 570px) {
@@ -381,7 +369,7 @@ header {
   .contact::after {
     --expanse: 0.5em;
 
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -396,8 +384,11 @@ header {
 main {
   flex: 1 1 auto;
 
-  background-image:
-    linear-gradient(to top, var(--doc-bg-color), transparent 20%),
+  background-image: linear-gradient(
+      to top,
+      var(--doc-bg-color),
+      transparent 20%
+    ),
     linear-gradient(var(--main-bg-color), var(--main-snd-bg-color));
 }
 
@@ -413,13 +404,10 @@ main {
   margin-right: auto;
 }
 
-:where(
-  .expertise,
-  .trainning
-)::before {
+:where(.expertise, .trainning)::before {
   --h-expanse: 5em;
-  
-  content: '';
+
+  content: "";
   position: absolute;
   top: calc(-1 * var(--h-expanse));
   left: calc(-1 * (100vw - 100%) / 2);
@@ -436,20 +424,11 @@ main {
   background-image: url(/cv/images/high_cloud.svg);
 }
 
-:where(
-  .expertise,
-  .typical-apps,
-  .trainning,
-  footer
-) > h2 {
+:where(.expertise, .typical-apps, .trainning, footer) > h2 {
   width: 100%;
 }
 
-:where(
-  .expertise,
-  .typical-apps,
-  .trainning
-) > p,
+:where(.expertise, .typical-apps, .trainning) > p,
 .position-description {
   flex: 1 1 max(40%, 21.075em);
 }
@@ -479,19 +458,19 @@ main {
 .trainning u::before,
 .trainning u::after {
   --side-margin: 0.125em;
-  
+
   font-weight: bold;
   position: relative;
   top: -0.0625em;
 }
 
 .trainning u::before {
-  content: '[';
+  content: "[";
   margin-right: var(--side-margin);
 }
 
 .trainning u::after {
-  content: ']';
+  content: "]";
   margin-left: var(--side-margin);
 }
 
@@ -525,11 +504,10 @@ footer > h2 {
 }
 
 .position-description .company {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .position-description .company .group {
   color: var(--main-bg-color);
   opacity: 50%;
 }
-
