@@ -1,13 +1,13 @@
 @import "./common.css";
 
 :root {
-  --doc-bg-color-rgb-components: 2,0,30;
+  --doc-bg-color-rgb-components: 2, 0, 30;
   --doc-bg-color: rgb(var(--doc-bg-color-rgb-components));
-  --main-bg-color: #CECDFF;
+  --main-bg-color: #cecdff;
   --main-snd-bg-color: #040031;
-  --primary-text-color-rgb-components: 235,235,235;
+  --primary-text-color-rgb-components: 235, 235, 235;
   --primary-text-color: rgb(var(--primary-text-color-rgb-components));
-  --secondary-text-color-rgb-components: 41,16,98;
+  --secondary-text-color-rgb-components: 41, 16, 98;
   --secondary-text-color: rgb(var(--secondary-text-color-rgb-components));
   --vw-relative-font-size: 1.25vw;
   --min-font-size: 16px;
@@ -39,7 +39,7 @@ footer {
   top: 0;
   left: 0;
   margin: 1.09375em;
-  color: #8EC7FF;
+  color: #8ec7ff;
   text-decoration: none;
   font-size: 0.667em;
 }
@@ -100,12 +100,12 @@ header {
 
 .technologies {
   --icon-size: 3em;
-  
+
   font-size: 0.638em;
 }
 
 .technologies svg {
-  color: #BBB74C;
+  color: #bbb74c;
 }
 
 .long-introduction {
@@ -147,7 +147,7 @@ main > *:nth-child(n + 2) {
   .demos-inner-wrapper > .half-split {
     display: contents;
   }
-  
+
   .desktop-order-2 {
     order: 2;
   }
@@ -157,13 +157,13 @@ main > *:nth-child(n + 2) {
   .demos {
     margin-bottom: 4em;
   }
-  
+
   .demos-inner-wrapper {
     flex-direction: column;
     justify-content: center;
     align-items: space-between;
   }
-  
+
   .demos-inner-wrapper > .half-split {
     display: flex;
     justify-content: space-around;
@@ -171,7 +171,7 @@ main > *:nth-child(n + 2) {
     flex-wrap: wrap;
     width: 100%;
   }
-  
+
   .demo {
     --scaled-size: calc(var(--size) * 2);
   }
@@ -179,7 +179,7 @@ main > *:nth-child(n + 2) {
 
 .demo {
   --capped-size: max(var(--scaled-size, var(--size)), 74px);
-  
+
   position: relative;
   flex: none;
   width: var(--capped-size);
@@ -207,7 +207,7 @@ main > *:nth-child(n + 2) {
 }
 
 .demo::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -221,11 +221,21 @@ main > *:nth-child(n + 2) {
   left: 50%;
   transform: translateX(-50%);
   text-transform: capitalize;
-  font-weight: bold;
   white-space: nowrap;
   line-height: 0.9;
   font-size: 0.667em;
-  
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25em;
+
+  & > *:first-child {
+    font-weight: bold;
+  }
+
+  & > *:nth-child(2) {
+    font-weight: normal;
+    font-size: 0.85em;
+  }
 }
 
 :not(.mediterranean-war) > .demo-title {
@@ -267,7 +277,7 @@ main > *:nth-child(n + 2) {
 
 .demo.avalon-a {
   --size: 10.165%;
-  
+
   background-image: url(/cv/images/avalona.png);
   margin-bottom: 4em;
 }
@@ -280,7 +290,7 @@ main > *:nth-child(n + 2) {
 
 .demo.flickr-coverflow {
   --size: 9.6%;
-  
+
   background-image: url(/cv/images/flickrcoverflow.png);
   background-size: auto 150%;
   background-position: left 66% center;
@@ -357,7 +367,7 @@ main > *:nth-child(n + 2) {
 }
 
 .link::before {
-  content: '';
+  content: "";
   position: absolute;
   width: var(--icon-size);
   aspect-ratio: 1;
@@ -506,8 +516,8 @@ main > *:nth-child(n + 2) {
   background-image: url(/cv/images/github.svg);
 }
 
-@media not all and (min-resolution:.001dpcm) {
-  @supports (-webkit-appearance:none) and (display:flow-root) {
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (display: flow-root) {
     .application::before {
       background-image: url(/cv/images/safari.svg);
     }
@@ -569,7 +579,7 @@ main > *:nth-child(n + 2) {
 .positions > li {
   --color: rgba(255, 255, 255, 40%);
   --position-padding: 0.625em;
-  
+
   width: 100%;
   box-sizing: border-box;
   padding: var(--position-padding);
@@ -582,7 +592,7 @@ main > *:nth-child(n + 2) {
   flex-direction: column;
   vertical-align: middle;
   font-size: 1.1875em;
-  
+
   &:has(section) {
     padding: calc(var(--position-padding) * 1.25);
     padding-bottom: 0.625em;
@@ -596,19 +606,19 @@ main > *:nth-child(n + 2) {
 
     & > .technology {
       display: none;
-      
+
       & + svg {
         height: 1.5em;
         aspect-ratio: 1;
         align-self: end;
       }
     }
-    
+
     & :where(h4, h5) {
       color: var(--primary-text-color);
     }
   }
-  
+
   & :where(p, .topic) {
     color: var(--secondary-text-color);
   }
