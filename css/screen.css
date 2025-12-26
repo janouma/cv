@@ -3,7 +3,7 @@
 :root {
   --doc-bg-color-rgb-components: 2, 0, 30;
   --doc-bg-color: rgb(var(--doc-bg-color-rgb-components));
-  --main-bg-color: #cecdff;
+  --main-bg-color: #cecdfb;
   --main-snd-bg-color: #040031;
   --primary-text-color-rgb-components: 235, 235, 235;
   --primary-text-color: rgb(var(--primary-text-color-rgb-components));
@@ -64,7 +64,20 @@ header {
   min-width: min(var(--column-capped-width), 100%);
 }
 
-.avatar.print,
+.avatar {
+  --size: 7.083em;
+
+  flex: none;
+  width: var(--size);
+  height: var(--size);
+  object-fit: cover;
+  object-position: center -0.75em;
+  box-sizing: border-box;
+  border: solid 1px rgba(var(--doc-bg-color-rgb-components), 33%);
+  background-color: white;
+  border-radius: 50%;
+}
+
 .skills-preview {
   display: none;
 }
@@ -73,13 +86,24 @@ header {
   font-size: calc(2 * max(var(--vw-relative-font-size), 12px));
 }
 
-.contact {
+.contact,
+.download {
   position: absolute;
-  top: 0;
   right: 0;
-  width: 1.031em;
   aspect-ratio: 1;
+}
+
+.contact {
+  top: 0;
+  width: 1.031em;
   background: no-repeat center/contain url(/cv/images/linkedin.svg);
+}
+
+.download {
+  top: 50%;
+  translate: 0 -60%;
+  width: 2.125em;
+  background: no-repeat center/contain url(/cv/images/download.svg);
 }
 
 .web {

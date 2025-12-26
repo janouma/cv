@@ -21,3 +21,12 @@ const url = document.URL.replace(/\/(\w+\.html)?$/, '')
 
 urlElement.textContent = url
 urlElement.parentElement.setAttribute('href', url)
+
+const downloadUrlElt = document.getElementById('download-url')
+
+if (downloadUrlElt) {
+  downloadUrlElt.textContent = url + '/cv_judicael_anouma_fr.pdf'
+}
+
+const heimdallShortLinkElt = document.getElementById('heimdall-short-link')
+heimdallShortLinkElt.textContent = `${url}/${heimdallShortLinkElt.parentElement.getAttribute('href')}`

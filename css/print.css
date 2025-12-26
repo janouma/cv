@@ -81,13 +81,6 @@ header {
   justify-content: space-between;
 }
 
-.avatar {
-  border: solid 1px black;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .avatar.screen {
   display: none;
 }
@@ -126,6 +119,10 @@ header {
   font-size: 0.375em;
 }
 
+.download {
+  display: none;
+}
+
 .long-introduction h2 {
   opacity: 60%;
   margin-bottom: 0.6em;
@@ -142,7 +139,6 @@ main {
 
 main > * {
   margin-bottom: 2.5em;
-  break-inside: avoid;
 }
 
 .demos {
@@ -303,12 +299,10 @@ main > * {
 
 .trainning {
   order: 1;
-  margin-bottom: 8em;
+  margin-inline: 0;
 }
 
 .positions-wrapper {
-  margin-top: 27em;
-  break-inside: avoid;
   order: 1;
 }
 
@@ -335,7 +329,6 @@ footer {
   vertical-align: middle;
   border: 1px solid #000;
   border-radius: 0.25em;
-  break-inside: avoid;
 
   /* squirel */
   &:nth-child(1) {

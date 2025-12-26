@@ -339,6 +339,7 @@ header {
 }
 
 .short-introduction {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 1.017em;
@@ -351,22 +352,8 @@ header {
   }
 }
 
-.avatar {
-  --size: 7.083em;
-
-  flex: none;
-  width: var(--size);
-  height: var(--size);
-  object-fit: cover;
-  object-position: center -0.75em;
-  box-sizing: border-box;
-  border: solid 1px rgba(var(--doc-bg-color-rgb-components), 33%);
-  background-color: white;
-  border-radius: 50%;
-}
-
 @media (hover: none) {
-  .contact::after {
+  :where(.contact, .download)::after {
     --expanse: 0.5em;
 
     content: "";
@@ -385,11 +372,9 @@ main {
   flex: 1 1 auto;
 
   background-image: linear-gradient(
-      to top,
-      var(--doc-bg-color),
-      transparent 20%
-    ),
-    linear-gradient(var(--main-bg-color), var(--main-snd-bg-color));
+    var(--main-bg-color),
+    color-mix(in srgb, var(--main-snd-bg-color), black 50%)
+  );
 }
 
 .expertise,
